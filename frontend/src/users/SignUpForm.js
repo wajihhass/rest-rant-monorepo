@@ -9,7 +9,7 @@ function SignUpForm() {
 		firstName: '',
 		lastName: '',
 		email: '',
-		password: ''
+		password_digest: ''
 	})
 
 	async function handleSubmit(e) {
@@ -67,11 +67,23 @@ function SignUpForm() {
 							name="email"
 						/>
 					</div>
+					
+					<div className="col-sm-6 form-group">
+        				<label htmlFor="password">Password</label>
+        				<input
+           					type="password"
+            				required
+            				value={user.password_digest}
+            				onChange={e => setUser({ ...user, password_digest: e.target.value })}
+            				className="form-control"
+            				id="password"
+           				 name="password"
+        				/>
+					</div>
 				</div>
 				<input className="btn btn-primary" type="submit" value="Sign Up" />
 			</form>
 		</main>
 	)
 }
-
-export default SignUpForm
+export default SignUpForm 
