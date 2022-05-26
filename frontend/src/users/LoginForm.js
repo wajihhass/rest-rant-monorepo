@@ -20,6 +20,7 @@ async function handleSubmit(e) {
     e.preventDefault()
     const response = await fetch(`http://localhost:5000/authentication/`, {
         method: 'POST',
+        credentials: 'include',
         headers: {
             'Content-Type': 'application/json'
         },
@@ -71,7 +72,7 @@ async function handleSubmit(e) {
                             type="password"
                             required
                             value={credentials.password}
-                            onChange={e => setCredentials({ ...credentials, password: e.target.value })}
+                            onChange={e => setCredentials({ ...credentials, password_digest: e.target.value })}
                             className="form-control"
                             id="password"
                             name="password"

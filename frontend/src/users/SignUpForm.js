@@ -73,7 +73,7 @@ function SignUpForm() {
         				<input
            					type="password"
             				required
-            				value={user.password_digest}
+            				value={user.password}
             				onChange={e => setUser({ ...user, password_digest: e.target.value })}
             				className="form-control"
             				id="password"
